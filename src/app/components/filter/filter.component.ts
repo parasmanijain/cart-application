@@ -6,14 +6,19 @@ import {
   EventEmitter,
   HostListener,
 } from "@angular/core";
-import { Options, ChangeContext, LabelType, Ng5SliderModule } from "ng5-slider";
 import { ProductListService } from "../../services/product-list.service";
+import {
+  ChangeContext,
+  LabelType,
+  NgxSliderModule,
+  Options,
+} from "@angular-slider/ngx-slider";
 
 @Component({
   selector: "app-filter",
   templateUrl: "./filter.component.html",
   styleUrls: ["./filter.component.scss"],
-  imports: [Ng5SliderModule],
+  imports: [NgxSliderModule],
 })
 export class FilterComponent implements OnInit {
   @Input() modal;

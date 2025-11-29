@@ -1,8 +1,8 @@
 <span *ngIf="!isMobile" class="desktop-only">
     <div class="filter-header">
     <h5>Filters</h5>
-    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
-    (userChangeEnd)="onUserChangeEnd($event)"></ng5-slider>
+    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
+    (userChangeEnd)="onUserChangeEnd($event)"></ngx-slider>
     <div class="filter-footer">
         <div>Price</div>
         <button class="apply-price" (click)="applyFilter()">Apply</button>
@@ -15,8 +15,8 @@
       <div class="modal-content">
       <div class="modal-header mobile-options-header">Filter Options</div>
       <div class="modal-body">
-        <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
-        (userChangeEnd)="onUserChangeEnd($event)"></ng5-slider>
+        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"
+        (userChangeEnd)="onUserChangeEnd($event)"></ngx-slider>
         <div class="filter-footer">
             <div>Price</div>
         </div>
