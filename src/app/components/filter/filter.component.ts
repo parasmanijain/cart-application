@@ -1,14 +1,21 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { Options, ChangeContext, LabelType } from 'ng5-slider';
-import { ProductListService } from '../../services/product-list.service';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+} from "@angular/core";
+import { Options, ChangeContext, LabelType, Ng5SliderModule } from "ng5-slider";
+import { ProductListService } from "../../services/product-list.service";
 
 @Component({
-  selector: 'app-filter',
-  templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  selector: "app-filter",
+  templateUrl: "./filter.component.html",
+  styleUrls: ["./filter.component.scss"],
+  imports: [Ng5SliderModule],
 })
 export class FilterComponent implements OnInit {
-
   @Input() modal;
   @Output() modalClosed: EventEmitter<any> = new EventEmitter();
   public minValue;
@@ -22,26 +29,30 @@ export class FilterComponent implements OnInit {
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '&#8377;' + value;
+          return "&#8377;" + value;
         case LabelType.High:
-          return '&#8377;' + value;
+          return "&#8377;" + value;
         default:
-          return '&#8377;' + value;
+          return "&#8377;" + value;
       }
-    }
+    },
   };
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener("window:resize", ["$event"])
   onResize(event) {
     this.isMobile = window.innerWidth < 768 ? true : false;
   }
 
-  constructor(private productListService: ProductListService) { }
+  constructor(private productListService: ProductListService) {}
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 768 ? true : false;
-    this.minValue = this.productListService.min.getValue() ? this.productListService.min.getValue() : 100;
-    this.maxValue = this.productListService.max.getValue() ? this.productListService.max.getValue() : 10000;
+    this.minValue = this.productListService.min.getValue()
+      ? this.productListService.min.getValue()
+      : 100;
+    this.maxValue = this.productListService.max.getValue()
+      ? this.productListService.max.getValue()
+      : 10000;
     this.selectedMin = this.minValue;
     this.selectedMax = this.maxValue;
   }

@@ -1,28 +1,39 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { ProductListService } from '../../services/product-list.service';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+} from "@angular/core";
+import { ProductListService } from "../../services/product-list.service";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-sort',
-  templateUrl: './sort.component.html',
-  styleUrls: ['./sort.component.scss']
+  selector: "app-sort",
+  templateUrl: "./sort.component.html",
+  styleUrls: ["./sort.component.scss"],
+  imports: [CommonModule, FormsModule],
 })
 export class SortComponent implements OnInit {
-
   @Input() modal;
   @Output() modalClosed: EventEmitter<any> = new EventEmitter();
   public order;
   public selectedOrder;
   public isMobile = false;
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener("window:resize", ["$event"])
   onResize(event) {
     this.isMobile = window.innerWidth < 768 ? true : false;
   }
-  constructor(private productListService: ProductListService) { }
+  constructor(private productListService: ProductListService) {}
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 768 ? true : false;
-    this.order = this.productListService.order.getValue() ? this.productListService.order.getValue() : 'highLow';
+    this.order = this.productListService.order.getValue()
+      ? this.productListService.order.getValue()
+      : "highLow";
     this.selectedOrder = this.order;
   }
 
@@ -49,5 +60,4 @@ export class SortComponent implements OnInit {
   changeOption(order) {
     this.selectedOrder = order;
   }
-
 }

@@ -1,25 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
-import { ProductListService} from '../../services/product-list.service';
+import { Component, OnInit } from "@angular/core";
+import { Router, NavigationStart } from "@angular/router";
+import { ProductListService } from "../../services/product-list.service";
+import { SearchComponent } from "../search/search.component";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
+  imports: [SearchComponent],
 })
 export class HeaderComponent implements OnInit {
-
   public addedProductsCount;
   public cartIconLink = false;
-  constructor(private productListService: ProductListService, private router: Router) { }
+  constructor(
+    private productListService: ProductListService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.productListService.totalProducts.subscribe(data => {
-        this.addedProductsCount = data;
+    this.productListService.totalProducts.subscribe((data) => {
+      this.addedProductsCount = data;
     });
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationStart) {
-        if (event.url === '/cart-icon') {
+        if (event.url === "/cart-icon") {
           this.cartIconLink = true;
         } else {
           this.cartIconLink = false;

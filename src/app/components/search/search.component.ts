@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductListService } from '../../services/product-list.service';
+import { Component, OnInit } from "@angular/core";
+import { ProductListService } from "../../services/product-list.service";
+import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.scss"],
+  imports: [FormsModule],
 })
 export class SearchComponent implements OnInit {
-
   public query;
-  constructor(private productListService: ProductListService) { }
+  constructor(private productListService: ProductListService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   searchProductByWord() {
     this.productListService.word.next(this.query);
     this.productListService.searchSortFilter();
   }
-
 }
