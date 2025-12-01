@@ -23,7 +23,7 @@
     "@angular/router": "^20.3.14",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "bootstrap": "^5.3.8",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "jquery": "^3.7.1",
     "path": "^0.12.7",
     "popper.js": "^1.16.1",
