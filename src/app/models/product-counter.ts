@@ -1,4 +1,4 @@
-export class ProductCounter {
-    productID: any;
-    count: number;
+export interface ProductCounter {
+  productID: any;
+  count: number;
 }
