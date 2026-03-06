@@ -37,8 +37,8 @@
     "@angular/compiler-cli": "^21.2.1",
     "@angular/language-service": "^21.2.1",
     "@types/jasmine": "~6.0.0",
-    "@types/node": "~25.3.3",
-    "angular-eslint": "21.2.0",
+    "@types/node": "~25.3.5",
+    "angular-eslint": "21.3.0",
     "enhanced-resolve": "^5.20.0",
     "eslint": "^10.0.2",
     "jasmine-core": "~6.1.0",
@@ -53,10 +53,5 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.56.1"
   },
-  "packageManager": "pnpm@10.30.3",
-  "pnpm": {
-    "overrides": {
-      "eslint": "^10.0.2"
-    }
-  }
+  "packageManager": "pnpm@10.30.3"
 }
