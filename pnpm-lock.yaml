@@ -44,15 +44,9 @@ importers:
       express:
         specifier: ^5.2.1
         version: 5.2.1
-      jquery:
-        specifier: ^4.0.0
-        version: 4.0.0
       path:
         specifier: ^0.12.7
         version: 0.12.7
-      popper.js:
-        specifier: ^1.16.1
-        version: 1.16.1
       rxjs:
         specifier: ~7.8.2
         version: 7.8.2
@@ -2383,9 +2377,6 @@ packages:
   jose@6.2.1:
     resolution: {integrity: sha512-jUaKr1yrbfaImV7R2TN/b3IcZzsw38/chqMpo2XJ7i2F8AfM/lA4G1goC3JVEwg0H7UldTmSt3P68nt31W7/mw==}
 
-  jquery@4.0.0:
-    resolution: {integrity: sha512-TXCHVR3Lb6TZdtw1l3RTLf8RBWVGexdxL6AC8/e0xZKEpBflBsjh9/8LXw+dkNFuOyW9B7iB3O1sP7hS0Kiacg==}
-
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -2794,10 +2785,6 @@ packages:
   pkce-challenge@5.0.1:
     resolution: {integrity: sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==}
     engines: {node: '>=16.20.0'}
-
-  popper.js@1.16.1:
-    resolution: {integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==}
-    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
 
   postcss-media-query-parser@0.2.3:
     resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
@@ -5623,8 +5610,6 @@ snapshots:
 
   jose@6.2.1: {}
 
-  jquery@4.0.0: {}
-
   js-tokens@4.0.0: {}
 
   jsesc@3.1.0: {}
@@ -6112,8 +6097,6 @@ snapshots:
       '@napi-rs/nice': 1.1.1
 
   pkce-challenge@5.0.1: {}
-
-  popper.js@1.16.1: {}
 
   postcss-media-query-parser@0.2.3: {}
 
