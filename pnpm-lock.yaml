@@ -124,6 +124,12 @@ importers:
         specifier: 22.0.3
         version: 22.0.3(@types/node@25.6.0)(chokidar@5.0.0)
 
+  .angular/cache/angular-cli-tmp-packages-uU7wPu:
+    dependencies:
+      '@angular/cli':
+        specifier: 22.0.3
+        version: 22.0.3(@types/node@25.6.0)(chokidar@5.0.0)
+
 packages:
 
   '@algolia/abtesting@1.14.1':
