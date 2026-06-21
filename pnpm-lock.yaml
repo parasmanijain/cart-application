@@ -118,6 +118,12 @@ importers:
         specifier: 8.59.0
         version: 8.59.0(eslint@10.5.0)(typescript@6.0.3)
 
+  .angular/cache/angular-cli-tmp-packages-E07oaW:
+    dependencies:
+      '@angular/cli':
+        specifier: 22.0.3
+        version: 22.0.3(@types/node@25.6.2)(chokidar@5.0.0)
+
   .angular/cache/angular-cli-tmp-packages-dERKch:
     dependencies:
       '@angular/cli':
