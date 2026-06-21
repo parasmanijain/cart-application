@@ -4,6 +4,7 @@ import {
   ViewChild,
   Renderer2,
   HostListener,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ModalComponent } from "../modal/modal.component";
 import { FilterComponent } from "../filter/filter.component";
@@ -14,6 +15,7 @@ import { ShoppingListComponent } from "../shopping-list/shopping-list.component"
   selector: "app-common",
   templateUrl: "./common.component.html",
   styleUrls: ["./common.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ModalComponent,
     FilterComponent,

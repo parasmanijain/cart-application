@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { Subscription } from "rxjs";
 import { ProductListService } from "../../services/product-list.service";
 import { CommonModule } from "@angular/common";
@@ -7,6 +12,7 @@ import { CommonModule } from "@angular/common";
   selector: "app-shopping-list",
   templateUrl: "./shopping-list.component.html",
   styleUrls: ["./shopping-list.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule],
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
@@ -34,8 +40,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         },
         (error) => {
           console.log(error);
-        }
-      )
+        },
+      ),
     );
   }
 

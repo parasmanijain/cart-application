@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ModalService } from "../../services/modal.service";
 import { CommonModule } from "@angular/common";
 
@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
   selector: "app-modal",
   templateUrl: "./modal.component.html",
   styleUrls: ["./modal.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule],
 })
 export class ModalComponent implements OnInit {

@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
   HostListener,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ProductListService } from "../../services/product-list.service";
 import { CommonModule } from "@angular/common";
@@ -14,6 +15,7 @@ import { FormsModule } from "@angular/forms";
   selector: "app-sort",
   templateUrl: "./sort.component.html",
   styleUrls: ["./sort.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CommonModule, FormsModule],
 })
 export class SortComponent implements OnInit {

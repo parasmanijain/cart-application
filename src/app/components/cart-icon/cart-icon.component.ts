@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { ProductListService } from "../../services/product-list.service";
@@ -9,6 +14,7 @@ import { CommonModule } from "@angular/common";
   selector: "app-cart-icon",
   templateUrl: "./cart-icon.component.html",
   styleUrls: ["./cart-icon.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [FormsModule, CommonModule],
 })
 export class CartIconComponent implements OnInit, OnDestroy {
@@ -28,7 +34,7 @@ export class CartIconComponent implements OnInit, OnDestroy {
   };
   constructor(
     private productListService: ProductListService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -42,12 +48,12 @@ export class CartIconComponent implements OnInit, OnDestroy {
               return product.count !== 0;
             });
           }
-        })
+        }),
       );
       this.subscriptions.push(
         this.productListService.totalProducts.subscribe((data) => {
           this.totalProducts = data;
-        })
+        }),
       );
       this.addedProducts.forEach((product) => {
         product.imageLoaded = false;
@@ -60,17 +66,17 @@ export class CartIconComponent implements OnInit, OnDestroy {
       this.subscriptions.push(
         this.productListService.totalActualCost.subscribe((data) => {
           this.totalActualCost = data;
-        })
+        }),
       );
       this.subscriptions.push(
         this.productListService.totalDiscount.subscribe((data) => {
           this.totalDiscount = data;
-        })
+        }),
       );
       this.subscriptions.push(
         this.productListService.totalFinalCost.subscribe((data) => {
           this.totalFinalCost = data;
-        })
+        }),
       );
     }
   }
@@ -78,12 +84,12 @@ export class CartIconComponent implements OnInit, OnDestroy {
   decreaseProductQuantity(updatedProduct) {
     if (updatedProduct.count === 1) {
       this.productListService.removeProductFromCart(
-        updatedProduct.productDetails.id
+        updatedProduct.productDetails.id,
       );
     } else {
       this.productListService.updateShoppingCart(
         updatedProduct.productDetails.id,
-        false
+        false,
       );
     }
   }
@@ -91,13 +97,13 @@ export class CartIconComponent implements OnInit, OnDestroy {
   increaseProductQuantity(updatedProduct) {
     this.productListService.updateShoppingCart(
       updatedProduct.productDetails.id,
-      true
+      true,
     );
   }
 
   removeProductFromCart(removedProduct) {
     this.productListService.removeProductFromCart(
-      removedProduct.productDetails.id
+      removedProduct.productDetails.id,
     );
   }
 

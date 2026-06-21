@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { Router, NavigationStart } from "@angular/router";
 import { ProductListService } from "../../services/product-list.service";
 import { SearchComponent } from "../search/search.component";
@@ -7,6 +7,7 @@ import { SearchComponent } from "../search/search.component";
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [SearchComponent],
 })
 export class HeaderComponent implements OnInit {
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   public cartIconLink = false;
   constructor(
     private productListService: ProductListService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {

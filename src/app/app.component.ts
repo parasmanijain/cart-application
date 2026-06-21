@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { ProductListService } from "./services/product-list.service";
 import { HeaderComponent } from "./components/header/header.component";
 import { RouterModule } from "@angular/router";
@@ -7,6 +7,7 @@ import { RouterModule } from "@angular/router";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [HeaderComponent, RouterModule],
 })
 export class AppComponent implements OnInit {

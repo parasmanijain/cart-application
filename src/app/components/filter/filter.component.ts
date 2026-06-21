@@ -5,6 +5,7 @@ import {
   Output,
   EventEmitter,
   HostListener,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { ProductListService } from "../../services/product-list.service";
 import {
@@ -18,6 +19,7 @@ import {
   selector: "app-filter",
   templateUrl: "./filter.component.html",
   styleUrls: ["./filter.component.scss"],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NgxSliderModule],
 })
 export class FilterComponent implements OnInit {
